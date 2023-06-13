@@ -26,9 +26,7 @@ public class AvgPriceFinder{
 		DecimalFormat formatter = new DecimalFormat("0.00");
 		System.out.println("The average price of these " + itemCount + " items is $" + formatter.format(avgPrice));
 
-		// TODO: write method to push data into excel file 
 	}
-
 
 	/**
 	 * Finds the minimum price from an individual line within the file
@@ -78,7 +76,6 @@ public class AvgPriceFinder{
 		return minPrice;
 	}
 
-
 	/**
 	 * Find the average price from array list of multiple prices 
 	 * @param ArrayList<Double> sumOfPrices contains all min prices from the page 
@@ -97,8 +94,6 @@ public class AvgPriceFinder{
 
 		return sum/count;
 	}
-
-
 
 
 }
