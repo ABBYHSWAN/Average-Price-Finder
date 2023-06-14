@@ -47,10 +47,12 @@ public class AvgPriceFinder{
 				int increment = 0; //incraments forward in the line 
 
 				//sets incrament to how many spaces ahead the price numbers begin
-				for(int j=0; !Character.isDigit(line.charAt(j)); j++){
+				for(int j=0; !Character.isDigit(line.charAt(i+j)); j++){
 					increment++;
 				}
-				char curr = line.charAt(i+increment);
+
+				char curr = ' ';
+					curr = line.charAt(i+increment);
 				StringBuilder price = new StringBuilder();
 
 				while(Character.isDigit(curr) || curr == '.'){ //while current char is not a letter, add it to price
