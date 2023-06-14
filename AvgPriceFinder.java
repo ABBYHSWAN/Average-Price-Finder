@@ -47,7 +47,7 @@ public class AvgPriceFinder{
 
 		//Captures the number after a $ and puts it into prices list
 		for(int i = 0; i < line.length(); i++){
-			if (line.charAt(i) == '$'){
+			if (line.charAt(i) == '$' && !Character.isLetter(line.charAt(i+1))){
 				int increment = 0; //incraments forward in the line 
 
 				//sets incrament to how many spaces ahead the price numbers begin
