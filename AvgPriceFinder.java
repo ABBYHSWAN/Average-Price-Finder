@@ -13,11 +13,15 @@ public class AvgPriceFinder{
 
 		ArrayList<Double> sumOfPrices = new ArrayList<Double>();
 
+		//keeps track of previous price in the case that two lines in a row represent the smae article
+		double prevPrice = 0;
+
 		//Runs through full txt file 
 		while(txtFile.ready()){
 			String readLine = txtFile.readLine();
 			double price = findMinPrice(readLine);
-			if(price > 0) sumOfPrices.add(price);
+			if(price > 0 && price != prevPrice) sumOfPrices.add(price);
+			prevPrice = price;
 		}
 		txtFile.close();
 
