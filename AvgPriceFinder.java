@@ -30,7 +30,7 @@ public class AvgPriceFinder{
 		DecimalFormat formatter = new DecimalFormat("0.00");
 		System.out.println("The average price of these " + itemCount + " items is $" + formatter.format(avgPrice));
 
-	}
+	} 
 
 	/**
 	 * Finds the minimum price from an individual line within the file
@@ -55,12 +55,11 @@ public class AvgPriceFinder{
 					increment++;
 				}
 
-				char curr = ' ';
-					curr = line.charAt(i+increment);
+				char curr = line.charAt(i+increment);
 				StringBuilder price = new StringBuilder();
 
-				while(Character.isDigit(curr) || curr == '.'){ //while current char is not a letter, add it to price
-					price.append(String.valueOf(curr)); //add curr to price string
+				while(Character.isDigit(curr) || curr == '.' || curr == ','){ //while current char is not a letter, add it to price
+					if(curr != ',') price.append(String.valueOf(curr)); //add curr to price string
 					increment++;
 					if(i+increment < line.length()) curr = line.charAt(i+increment);
 					else curr = ' ';
@@ -84,7 +83,7 @@ public class AvgPriceFinder{
 
 	/**
 	 * Find the average price from array list of multiple prices 
-	 * @param ArrayList<Double> sumOfPrices contains all min prices from the page 
+	 * @param ArrayList<Double> sumOfPrices contains all min prices from the page
 	 * @return the average price found
 	 */
 	public static double findAvgPrice(ArrayList<Double> sumOfPrices){
