@@ -77,7 +77,7 @@ public class AvgPriceFinder{
 			if(priceNum < minPrice) minPrice = priceNum;
 		}
 
-		if(minPrice == Integer.MAX_VALUE) return  0;
+		if(minPrice == Integer.MAX_VALUE) return 0;
 		return minPrice;
 	}
 
